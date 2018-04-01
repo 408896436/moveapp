@@ -4,3 +4,6 @@ body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;}
 h1{display: none;}
 img{display: block; width: 100%;}
 a{text-decoration: none;}
+
+/*public*/
+.message{display: block; width: 0.24rem; height: 0.24rem; border-radius: 50%; background: #fb4c45; text-align: center; line-height: 0.24rem; font-size: 0.16rem; font-weight: bold; color: #fff; position: absolute; right: -0.1rem; top: -0.12rem; border: 0.02rem solid #fff;}

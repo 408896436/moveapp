@@ -5,11 +5,24 @@ let routerConfig = [
 	},
     {
     	path:'/index', 
-    	component:resolve => require(['./template/Index.vue'], resolve)
+    	component:resolve => require(['./template/Index.vue'], resolve),
+        meta: {
+            title: '腾讯IP Mall'
+        }
     },
     {
-    	path:'/about', 
-    	component:resolve => require(['./template/About.vue'], resolve)
+    	path:'/personal', 
+    	component:resolve => require(['./template/Personal.vue'], resolve),
+         meta: {
+            title: '个人中心'
+        }
+    },
+    {
+        path:'/question', 
+        component:resolve => require(['./template/Question.vue'], resolve),
+        meta: {
+            title: '常见问题'
+        }
     }	
 ];
 

@@ -12,10 +12,10 @@
     <!--导航 S-->
     <div class='nav'>
         <ul>
-          <li><router-link to="/about"><span><img src="../assets/icon1.png"></span>衣服</router-link></li>
-          <li><router-link to="/about"><span><img src="../assets/icon2.png"></span>手办</router-link></li>
-          <li><router-link to="/about"><span><img src="../assets/icon3.png"></span>皮具</router-link></li>
-          <li><router-link to="/about"><span><img src="../assets/icon4.png"></span>抱枕</router-link></li>
+          <li><router-link to="/personal"><span><img src="../assets/icon1.png"></span>衣服</router-link></li>
+          <li><router-link to="/personal"><span><img src="../assets/icon2.png"></span>手办</router-link></li>
+          <li><router-link to="/personal"><span><img src="../assets/icon3.png"></span>皮具</router-link></li>
+          <li><router-link to="/personal"><span><img src="../assets/icon4.png"></span>抱枕</router-link></li>
         </ul>
     </div>
     <!--导航 E-->
@@ -23,11 +23,11 @@
     <!--商品版块 S-->
     <div class='goodslist'>
         <div class='goods'>
-           <h2>衣服<router-link class='more' to="/about">更多 ></router-link></h2>
+           <h2>衣服<router-link class='more' to="/personal">更多 ></router-link></h2>
            <div class='goods-ctx'>
               <ul>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img2.jpg"></dt>
                        <dd>
@@ -38,7 +38,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img3.jpg"></dt>
                        <dd>
@@ -49,7 +49,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img2.jpg"></dt>
                        <dd>
@@ -60,7 +60,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img3.jpg"></dt>
                        <dd>
@@ -74,11 +74,11 @@
            </div>
         </div>
         <div class='goods'>
-           <h2>手办<router-link class='more' to="/about">更多 ></router-link></h2>
+           <h2>手办<router-link class='more' to="/personal">更多 ></router-link></h2>
            <div class='goods-ctx'>
               <ul>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img2.jpg"></dt>
                        <dd>
@@ -89,7 +89,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img3.jpg"></dt>
                        <dd>
@@ -100,7 +100,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img2.jpg"></dt>
                        <dd>
@@ -111,7 +111,7 @@
                    </router-link>
                 </li>
                 <li>
-                   <router-link to="/about">
+                   <router-link to="/personal">
                      <dl>
                        <dt><img src="../assets/img3.jpg"></dt>
                        <dd>
