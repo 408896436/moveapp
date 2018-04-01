@@ -26,7 +26,14 @@ let routerConfig = [
         meta: {
             title: '常见问题'
         }
-    }	
+    },
+    {
+        path:'/goodstype', 
+        component:resolve => require(['./template/GoodsType.vue'], resolve),
+        meta: {
+            title: '分类'
+        }
+    }   	
 ];
 
 export default routerConfig;

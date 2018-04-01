@@ -2,6 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routerConfig'
 
+//自定义全局组件
+import BotNav from './template/Nav-Bottom'
+const botNav = {
+	install : function(Vue){
+		Vue.component('nav-bottom', BotNav);
+	}
+}
+Vue.use(botNav)
+
 Vue.use(VueRouter);
 
 let router = new VueRouter({

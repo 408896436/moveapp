@@ -12,10 +12,10 @@
     <!--导航 S-->
     <div class='nav'>
         <ul>
-          <li><router-link to="/personal"><span><img src="../assets/icon1.png"></span>衣服</router-link></li>
-          <li><router-link to="/personal"><span><img src="../assets/icon2.png"></span>手办</router-link></li>
-          <li><router-link to="/personal"><span><img src="../assets/icon3.png"></span>皮具</router-link></li>
-          <li><router-link to="/personal"><span><img src="../assets/icon4.png"></span>抱枕</router-link></li>
+          <li><router-link to="/goodstype"><span><img src="../assets/icon1.png"></span>衣服</router-link></li>
+          <li><router-link to="/goodstype"><span><img src="../assets/icon2.png"></span>手办</router-link></li>
+          <li><router-link to="/goodstype"><span><img src="../assets/icon3.png"></span>皮具</router-link></li>
+          <li><router-link to="/goodstype"><span><img src="../assets/icon4.png"></span>抱枕</router-link></li>
         </ul>
     </div>
     <!--导航 E-->
@@ -126,6 +126,8 @@
         </div>
     </div>
     <!--商品版块 E-->
+
+    <nav-bottom></nav-bottom>
 
   </div>
 </template>
