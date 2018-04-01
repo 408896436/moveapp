@@ -1,7 +1,10 @@
 let routerConfig = [
 	{
 		path:'/', 
-		component:resolve => require(['./template/Index.vue'], resolve)
+		component:resolve => require(['./template/Index.vue'], resolve),
+        meta: {
+            title: '腾讯IP Mall'
+        }
 	},
     {
     	path:'/index', 
