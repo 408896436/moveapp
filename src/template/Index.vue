@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     
     <!--轮播 S-->
     <div class='lunbo'>
@@ -126,9 +126,6 @@
         </div>
     </div>
     <!--商品版块 E-->
-
-    <nav-bottom></nav-bottom>
-
   </div>
 </template>
 
@@ -148,6 +145,7 @@ export default {
   .nav a{color: #000;}
   .nav li{ display: inline-block; font-size: 0.24rem; margin:0 0.46rem;}
   .nav li span{display: block; width: 0.8rem; margin-bottom: 0.2rem;}
+  .goods{overflow: hidden;}
   .goods h2{font-size: 0.3rem; font-weight: normal; padding: 0 0.2rem; margin-bottom: 0.2rem; }
   .goods h2:before{content: ''; display: inline-block; width: 0.05rem; height: 0.28rem; background: #fb4c45; margin-right: 0.09rem; vertical-align: -0.03rem;}
   .goods a{color: #000;}
@@ -160,4 +158,5 @@ export default {
   .goods-ctx dd p{padding: 0.05rem 0;}
   .goods-ctx dd span{color: #fb4c45;}
   .goods-ctx dd del{color: #a6a6a6; font-size: 0.2rem; padding-left: 0.22rem;}
+  .goodslist .goods:last-child{padding-bottom:0.96rem;}
 </style>

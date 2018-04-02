@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <div class='nav'>
        <ul>
          <li class='select'>全部</li>
@@ -186,4 +186,5 @@ export default {
   .goods .goods-xl-pl{font-size: 0.2rem; color: #a6a6a6;}
   .goods .goods-xl-pl span{margin-right: 0.2rem;}
   .goods .gotobuy{display: block; width: 1.43rem; height: 0.66rem; line-height: 0.66rem; text-align: center; font-size: 0.3rem; color: #fff; background: #fb4c45; position: absolute; right: 0; bottom: 0.31rem; border-radius: 4%;}
+  .goods-list .goods:last-child{padding-bottom:2rem;}
 </style>

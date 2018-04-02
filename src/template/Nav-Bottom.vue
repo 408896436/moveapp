@@ -6,6 +6,15 @@
     <router-link class='a4 aa' to="/personal"><span class='my'><em>15</em></span>我的</router-link>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+</script>
 <style scoped>
   .bot-nav{position: fixed; bottom: 0; left: 0; z-index: 9998; height: 0.96rem; width: 100%; background: #fff; border-top: 0.02rem solid #d3d3d3; font-size: 0.22rem;}
   .bot-nav{text-align: center;}
@@ -26,5 +35,3 @@
   .bot-nav .aa em{font-style: normal; display: block; position: absolute; top: 0.1rem; right: 0; width: 0.28rem; height: 0.28rem; background: #fb4c45; color: #fff; border-radius: 50%; font-size: 0.16rem; line-height: 0.28rem;}
   .bot-nav .a4 em{right: -0.1rem;}
 </style>
-<script>
-</script>

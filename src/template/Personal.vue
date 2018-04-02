@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
 
     <!--头像 S-->
     <div class='user-tx'>

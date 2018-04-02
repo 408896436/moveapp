@@ -33,7 +33,14 @@ let routerConfig = [
         meta: {
             title: '分类'
         }
-    }   	
+    },
+    {
+        path:'/buycar', 
+        component:resolve => require(['./template/BuyCar.vue'], resolve),
+        meta: {
+            title: '购物车'
+        }
+    }     	
 ];
 
 export default routerConfig;

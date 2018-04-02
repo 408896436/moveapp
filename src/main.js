@@ -11,8 +11,8 @@ const botNav = {
 }
 Vue.use(botNav)
 
+//使用路由
 Vue.use(VueRouter);
-
 let router = new VueRouter({
   	routes
 });
@@ -25,6 +25,7 @@ router.beforeEach((to, from, next) => {
   next()
 });
 
+//初始化
 new Vue({
   router,	
   el : '#app'
