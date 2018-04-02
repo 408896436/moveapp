@@ -40,6 +40,13 @@ let routerConfig = [
         meta: {
             title: '购物车'
         }
+    },
+    {
+        path:'/details', 
+        component:resolve => require(['./template/Details.vue'], resolve),
+        meta: {
+            title: 'xxxxx'
+        }
     }     	
 ];
 

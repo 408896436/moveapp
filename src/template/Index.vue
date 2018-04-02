@@ -27,7 +27,7 @@
            <div class='goods-ctx'>
               <ul>
                 <li>
-                   <router-link to="/personal">
+                   <router-link to="/details">
                      <dl>
                        <dt><img src="../assets/img2.jpg"></dt>
                        <dd>
