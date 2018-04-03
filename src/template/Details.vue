@@ -1,6 +1,6 @@
 <template>
 	<div class='details'>
-		<!-- banner S-->
+		<!-- 轮播图 S-->
 		<div class="swiper-container">
        		<div class="swiper-wrapper">
        			<div v-for='item in bannerPic' class="swiper-slide"><img :src="item"></div>
@@ -9,7 +9,9 @@
        			{{nowidx}}/{{bannerPic.length}}
        		</div>
        	</div>
-		<!-- banner E-->
+		<!-- 轮播图 E-->
+		
+		<!--商品详情 S-->
 		<div class='wp_details'>
 			<h2>{{title}}</h2>
 			<p>{{describe}}</p>
@@ -17,56 +19,51 @@
 		<div class='price_xl'>
 			<div class='price'>
 				<span class='nowPrice'>{{price | price}}</span>
-				<span class='deletePrice'>{{delPrice | price}}</span>
+				<del class='deletePrice'>{{delPrice | price}}</del>
 			</div>	
 			<div class='jqxl'>
 				<span class='zkc'>总库存：{{kucun}}</span>
 				<span class='xl'>近期销量：{{xl}}</span>
 			</div>
 		</div>
+		<!--商品详情 E-->
+
+		<!--商品tab S-->
 		<div class='nav' id='nav'>
-			<a class='select' href="javascript:;" title='商品介绍'>商品介绍</a>
-			<a href="javascript:;" title='规格参数'>规格参数</a>
-			<a href="javascript:;" title='买家评论'>买家评论</a>
+			<a @click='navButtonClick("商品介绍")' :class="{select : tab=='商品介绍'}" href="javascript:;">商品介绍</a>
+			<a @click='navButtonClick("规格参数")' :class="{select : tab=='规格参数'}" href="javascript:;">规格参数</a>
+			<a @click='navButtonClick("买家评论")' :class="{select : tab=='买家评论'}" href="javascript:;">买家评论</a>
 		</div>
-		<div class='wpdetails' id='wpdetails' style='display:nones;'>
-			<img :src="wpdescribePic">
+		<!--商品tab E-->
+
+		<!--商品图片list S-->
+		<div v-show='tab == "商品介绍"' class='wpdetails' id='wpdetails' style='display:nones;'>
+			<div v-if="wpdescribePic.length <= 0" class='no-message'>没有商品介绍！</div>
+			<div v-if="wpdescribePic.length > 0">
+				<img v-for="(value, key) in wpdescribePic" :src="value">
+			</div>
 		</div>
-		<div class='aboutwp' id='aboutwp' style='display:none;'>
-			<table border='1' cellspacing='0' cellpadding='0'>
+		<!--商品图片list E-->
+
+		<!--规格参数 S-->
+		<div v-show='tab == "规格参数"' class='aboutwp' id='aboutwp' style='display:none;'>
+			<div v-if="Object.keys(goods_msg).length <= 0" class='no-message'>没有规格参数！</div>
+			<table v-if="Object.keys(goods_msg).length > 0"  border='1' cellspacing='0' cellpadding='0'>
 				<tr>
-					<td colspan='2'>综合评价</td>
+					<td colspan='2'>产品信息</td>
 				</tr>
-				<tr>
-					<td>品牌</td>
-					<td>SN</td>
-				</tr>
-				<tr>
-					<td>产地</td>
-					<td>中国</td>
-				</tr>
-				<tr>
-					<td colspan='2'>属性</td>
-				</tr>
-				<tr>
-					<td>重量</td>
-					<td>16g</td>
-				</tr>
-				<tr>
-					<td>材质</td>
-					<td>尼龙</td>
-				</tr>
-				<tr>
-					<td colspan='2'>其他</td>
-				</tr>
-				<tr>
-					<td>材质</td>
-					<td>尼龙</td>
+				<tr v-for='(value,key) in goods_msg'>
+					<td>{{key}}</td>
+					<td>{{value}}</td>
 				</tr>
 			</table>
 		</div>
-		<div class='pinlun' id='pinlun' style='display:none;'>
-			<div class='toppl'>
+		<!--规格参数 E-->
+		
+		<!--评论 S-->
+		<div  v-show='tab == "买家评论"' class='pinlun' id='pinlun' style='display:none;'>
+			<div v-if="userpinlun.length <= 0" class='no-message'>暂时还没有评论</div>
+			<div v-if="userpinlun.length > 0" class='toppl'>
 				<div class='pinlun_val'>
 					评论（{{userpinlun.length}}条）
 				</div>
@@ -104,12 +101,17 @@
 				</div>
 			</div>
 		</div>
+		<!--评论 E-->
+		
+		<!--底部导航 S-->
 		<div class='bot_nav'>
 			<a class='a1' href="#"><span class='kf'></span>客服</a>
 			<a class='a2' href="#"><span class='gouwuche'><em>15</em></span>购物车</a>
 			<a class='a3' href="javascript:;" title='加入购物车'>加入购物车</a>
 			<a class='a4' href="javascript:;" title='立即购买'>立即购买</a>
 		</div>
+		<!--底部导航 E-->
+
 	</div>
 </template>
 <style>
@@ -127,7 +129,7 @@
 	.details .nav a{height: 0.9rem; width: 2.5rem; display:block; float: left; text-align: center; line-height: 0.9rem; font-size: 0.28rem; color: #000; border-bottom: 0.01rem solid #dddddd;}
 	.details .nav .select{border-color: red;}
 	
-	.details .pinlun{padding: 0 0.2rem;}
+	.details .pinlun{padding: 0 0.2rem 1.1rem;}
 	.details .aboutwp{font-size: 0.26rem; text-align: center; margin-top: 0.2rem;}
 	.details .aboutwp table{border-color: #e2e2e2; margin: 0 auto;}
 	.details .aboutwp table td{height: 0.48rem;}
@@ -170,25 +172,32 @@
 
 	.nowPrice{color: #fb4c45; font-size: 0.44rem;}
 	.deletePrice{color: #a6a6a6; font-size: 0.2rem;}
+
+	.wpdetails,.aboutwp{padding-bottom: 1.1rem;}
+	.no-message{text-align: center; height: 3rem; line-height: 3rem; color: #a6a6a6; font-size: 0.3rem;}
 </style>
 <script>
 	
 	import Swiper from '../js/libs/swiper-3.4.2.min.js'
-	import Tab from '../js/libs/tab.js'
 
 	/*pic*/
-	import pic4 from '../assets/pic4.jpg'
-	import pic5 from '../assets/pic5.jpg'
+	import img0 from '../assets/img0.jpg'
+
+	import b1 from '../assets/1.jpg'
+	import b2 from '../assets/2.jpg'
+	import b3 from '../assets/3.jpg'
+
 	import tx from '../assets/sb.png'
 	import pic6 from '../assets/pic6.jpg'
 	export default{
 		data(){
 			return {
-				nowidx : 1,
+				tab : '商品介绍',
+				nowidx : 1,	//轮播图的下标
 				bannerPic : [
-					pic4,
-					pic4,
-					pic4
+					img0,
+					img0,
+					img0
 				],
 				title : 'CF最新枪战模型X战1',
 				describe : 'CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧。',
@@ -196,8 +205,21 @@
 				delPrice : 259,
 				kucun : 50000,
 				xl : 2000,
-				wpdescribePic : pic5,
+				wpdescribePic : [
+					'/dist/1.jpg',
+					'/dist/2.jpg',
+					'/dist/3.jpg'
+				],
 				zhpj : 3,
+				goods_msg : {
+					'产品名':'穿越火线-灵狐者之保卫者',
+					'出品商':'威酷模玩',
+					'型号':'VC-CF-03',
+					'规格':'十二寸可动人偶',
+					'材料':'PVC+合金+纺织物',
+					'可动性':'超可动穿戴拆卸',
+					'适合年龄':'15+'
+				},
 				userpinlun : [
 					 {
 						usertx : tx,
@@ -222,24 +244,19 @@
 				]
 			}
 		},
+		methods : {
+			navButtonClick : function(text){
+				this.tab = text;
+			}
+		},
 		mounted : function(){
 			var self = this;
 			new Swiper('.swiper-container', {
 		        pagination: '.swiper-pagination',
 		        paginationClickable: true,
-		        onSlideChangeEnd:function(swiper){
+		        onSlideChangeStart:function(swiper){
 		        	self.nowidx = swiper.activeIndex+1;
 		        }
-		    }); 
-
-		     //tab
-		    new Tab().init({  
-		        'parent' : 'nav',  
-		        'action' : 'a',   
-		        'bnt1' : 'select,noselect,wpdetails',  
-		        'bnt2' : 'select,noselect,aboutwp',  
-		        'bnt3' : 'select,noselect,pinlun',  
-		        'event' : 'onclick'  
 		    });  
 		}
 	}

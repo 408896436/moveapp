@@ -59,6 +59,10 @@ export default {
      getPath : function(){
         switch( this.$route.path )
         {
+          case '/':
+              this.selectNum = 0;
+           break;
+
            case '/index':
               this.selectNum = 0;
            break;

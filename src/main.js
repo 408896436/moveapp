@@ -28,7 +28,15 @@ router.beforeEach((to, from, next) => {
 //初始化
 new Vue({
   router,	
-  el : '#app'
+  el : '#app',
+  //控制路由切换的时候滚动条位置 有bug
+  scrollBehavior (to, from, savedPosition) {
+     if (savedPosition) {
+      return savedPosition
+     } else {
+      return { x: 0, y: 0 }
+     }
+    }
 });
 
 

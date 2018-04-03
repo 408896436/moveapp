@@ -163,7 +163,7 @@ export default {
 </script>
 
 <style scoped>
-  .back-to-top{position: fixed; right: 0.2rem; bottom: 0.4rem; z-index: 9990; display: block; width: 0.5rem; height: 0.5rem; background: rgba(0,0,0,0.4); border-radius: 50%; color: #fff; font-size: 0.4rem; text-align: center; line-height: 0.5rem;}
+  .back-to-top{position: fixed; right: 0.2rem; bottom: 1.6rem; z-index: 9990; display: block; width: 0.5rem; height: 0.5rem; background: rgba(0,0,0,0.4); border-radius: 50%; color: #fff; font-size: 0.4rem; text-align: center; line-height: 0.5rem;}
   .nav{width: 100%; height: 0.85rem; position: fixed; top: 0; left: 0; background: #fff; z-index: 9990;}
   .nav li{ width: 1.5rem; border-bottom: 0.01rem solid #ebebeb; line-height: 0.85rem; text-align: center; font-size: 0.3rem; float: left; display: inline; cursor: pointer;}
   .nav .select{border-color:#fb4c45; color: #fb4c45; background: #f2f2f2;}
