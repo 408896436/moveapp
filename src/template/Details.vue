@@ -1,5 +1,6 @@
 <template>
 	<div class='details'>
+
 		<!-- 轮播图 S-->
 		<div class="swiper-container">
        		<div class="swiper-wrapper">
@@ -107,14 +108,99 @@
 		<div class='bot_nav'>
 			<a class='a1' href="#"><span class='kf'></span>客服</a>
 			<a class='a2' href="#"><span class='gouwuche'><em>15</em></span>购物车</a>
-			<a class='a3' href="javascript:;" title='加入购物车'>加入购物车</a>
-			<a class='a4' href="javascript:;" title='立即购买'>立即购买</a>
+			<a class='a3' @click='showtc("加入购物车")' href="javascript:;" title='加入购物车'>加入购物车</a>
+			<a class='a4' @click='showtc("立即购买")' href="javascript:;" title='立即购买'>立即购买</a>
 		</div>
 		<!--底部导航 E-->
 
+		<!--立即购买和加入购物车弹窗 S-->
+		<div v-show="isShowtc" class='tc' style='display:none;'>
+			<div class='buy_intoCar'>
+				<div class='goods_banner'>
+					<dl>
+						<dt><span><img src="../assets/pic6.jpg"></span></dt>
+						<dd>
+							<p>CF最新枪战模型X战1</p>
+							<p class='price'>￥229</p>
+						</dd>
+					</dl>
+				</div>
+				<div class='goods-type'>
+					<ul>
+						<li>
+							<h2>颜色</h2>
+							<p>
+								<span>白色</span>
+								<span>蓝色</span>
+							</p>
+						</li>
+						<li>
+							<h2>尺码</h2>
+							<p>
+								<span>200cm</span>
+								<span>100cm</span>
+							</p>
+						</li>
+						<li>
+							<h2>分辨率</h2>
+							<p>
+								<span>普通(100*1000)</span>
+								<span class='select'>高清(2000*2000)</span>
+								<span class='unselect'>高清(2000*2000)</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class='goods-value'>
+					<dl>
+						<dt>数量</dt>
+						<dd>
+							<div>
+								<span>-</span>
+								<strong>1</strong>
+								<span>+</span>
+							</div>
+							<em>(库存: 50)</em>
+						</dd>
+					</dl>
+				</div>
+				<a class='button' :class='buttonText == "加入购物车"? "car" : "buy"' href="javascript:;">{{buttonText}}</a>
+				<a @click='closetc' class='tc-close' href="javascript:;">×</a>
+			</div>
+		</div>
+		<!--立即购买和加入购物车弹窗 E-->
+
 	</div>
 </template>
-<style>
+<style scoped>
+	.buy_intoCar{height: 8.86rem; width: 7.5rem; background: #fff; position: absolute; bottom: 0; left: 0; z-index: 9999;}
+	.goods_banner{height: 2.25rem; border-bottom: 0.01rem solid #dddddd; position: relative;}
+	.goods_banner dl{display: flex;}
+	
+	.goods_banner dt{width: 2.38rem; height: 2.38rem; background: #fff; margin: -0.5rem 0 0 0.2rem; border: 0.01rem solid #dddddd; display: table; position: relative;}
+	.goods_banner dt span{ width: 1.98rem;  margin: 0 auto; vertical-align: middle; display: table-cell; text-align: center; }
+	.goods_banner dt span img{width: 1.98rem; display: inline;}
+	.goods_banner dd{width: 5.12rem; font-size: 0.28rem; }
+	.goods_banner dd .price{color: #fb4c45;}
+	.goods_banner dd p{padding: 0.4rem 0 0 0.46rem;}
+	.goods-type h2{font-size: 0.26rem; color: #6e6e6e; padding-left: 0.27rem; font-weight: normal;}
+	.goods-type p{font-size: 0.26rem; color: #6e6e6e; margin-bottom: 0.17rem; display: flex; flex-wrap:wrap; }
+	.goods-type span{ height: 0.54rem; padding: 0 0.08rem; text-align: center; line-height: 0.54rem; display: inline-block; color: #000; border: 0.01rem solid #c1c2c4; border-radius: 0.05rem; margin:0.14rem 0 0 0.24rem; }
+	.goods-type li{margin-top: 0.3rem;}
+	.goods-type .unselect{background: #ddd; color: #c1bfbf; border-color: #ddd;}
+	.goods-type .select{background: #fb4c45; color: #fff; border-color: #fb4c45;}
+	.goods-value dl{display: flex; font-size: 0.26rem; color: #6e6e6e; padding-top: 0.3rem;}
+	.goods-value dd div{ text-align: center; line-height: 0.53rem; font-size: 0; display: inline-block; }
+	.goods-value dd span{vertical-align: middle; display: inline-block; width: 0.53rem; height: 0.53rem; border: 0.01rem solid #d6d6d6; font-size: 0.4rem; }
+	.goods-value dd strong{font-size: 0.33rem; color: #000; display: inline-block; width: 1.08rem; height: 0.53rem; font-weight: normal; border-top:0.01rem solid #d6d6d6; border-bottom: 0.01rem solid #d6d6d6; vertical-align: middle; }
+	.goods-value dd em{font-style: normal; color: #000; vertical-align: -0.1rem; display: inline-block; padding-left: 0.23rem;}
+	.goods-value dt{padding-left: 0.24rem; width: 3.23rem; line-height: 0.6rem;}
+	.buy_intoCar .button{position: absolute; bottom: 0; left: 0; width: 100%; height: 1rem; line-height: 1rem; text-align: center; font-size: 0.32rem;}
+	.buy_intoCar .buy{background: #fb4c45; color: #fff;}	
+	.buy_intoCar .car{background: #fc9320; color: #fffeff;}	
+
+
+
 	.details{overflow: hidden; padding-bottom: 0.1rem;}
 	.details .now_index{width: 0.5rem; height: 0.5rem; background: rgba(85,84,80, 0.5); border-radius: 50%; font-size: 0.24rem; color: #fff; text-align: center; line-height: 0.5rem; position: absolute; bottom: 0.3rem; right: 0.3rem; z-index: 9990; }
 	.details .wp_details,.details .price_xl{width: 7.1rem; margin: 0 auto; overflow: hidden;}
@@ -159,7 +245,7 @@
 	.details .buyTime ul :nth-child(2){float: right;}
 	.details .userpinlun{overflow: hidden; margin-bottom: 0.6rem;}
 	.details .user_text{text-align: justify;}
-	.details .bot_nav{position: fixed; bottom: 0; left: 0; width: 100%; height: 1.1rem; background: #fff; font-size: 0.22rem;}
+	.details .bot_nav{position: fixed; bottom: 0; left: 0; width: 100%; height: 1.1rem; background: #fff; font-size: 0.22rem; z-index: 9990;}
 	.details .bot_nav a{color: #000; display: block; float: left; position: relative; height: 100%; text-align: center; overflow: hidden;}
 	.details .bot_nav span{display: block; margin: 0.25rem auto 0;}
 	.details .bot_nav .kf{width: 0.37rem; height: 0.38rem; background: url('../assets/kf.png') no-repeat 0 0; background-size: 0.37rem;}
@@ -192,6 +278,8 @@
 	export default{
 		data(){
 			return {
+				isShowtc : false,
+				buttonText : '',
 				tab : '商品介绍',
 				nowidx : 1,	//轮播图的下标
 				bannerPic : [
@@ -247,6 +335,13 @@
 		methods : {
 			navButtonClick : function(text){
 				this.tab = text;
+			},
+			showtc : function(text){
+				this.buttonText = text;
+				this.isShowtc = true;
+			},
+			closetc : function(){
+				this.isShowtc = false;
 			}
 		},
 		mounted : function(){
