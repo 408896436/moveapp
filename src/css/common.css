@@ -8,4 +8,17 @@ a{text-decoration: none;}
 /*public*/
 .message{display: block; width: 0.24rem; height: 0.24rem; border-radius: 50%; background: #fb4c45; text-align: center; line-height: 0.24rem; font-size: 0.16rem; font-weight: bold; color: #fff; position: absolute; right: -0.1rem; top: -0.12rem; border: 0.02rem solid #fff;}
 .tc{position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:9999; background: rgba(0,0,0,0.5);}
+.center_tc{position: absolute; top: 50%; left: 50%; -webkit-transform:translate(-50%,-50%);}
+.showtc_am{ -webkit-animation:showtc .5s ease both; }
+@-webkit-keyframes showtc
+{
+	0%{ background: rgba(0,0,0,0); }
+	100%{ background: rgba(0,0,0,0.5);}
+}
+.closetc_am{ -webkit-animation:closetc .5s ease both; }
+@-webkit-keyframes closetc
+{
+	0%{ background: rgba(0,0,0,0.5); }
+	100%{ background: rgba(0,0,0,0);}
+}
 .tc-close{position: absolute; top: 0; right: 0.1rem; color: #afb0b1; font-size: 0.5rem;}

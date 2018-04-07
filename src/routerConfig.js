@@ -1,7 +1,7 @@
 let routerConfig = [
 	{
 		path:'/', 
-		component:resolve => require(['./template/Index.vue'], resolve),
+		component:resolve => require(['./template/index.vue'], resolve),
         meta: {
             title: '腾讯IP Mall'
         }
@@ -46,6 +46,13 @@ let routerConfig = [
         component:resolve => require(['./template/Details.vue'], resolve),
         meta: {
             title: 'xxxxx'
+        }
+    },
+    {
+        path:'/address', 
+        component:resolve => require(['./template/Address.vue'], resolve),
+        meta: {
+            title: '新增地址'
         }
     }     	
 ];

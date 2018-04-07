@@ -169,10 +169,35 @@
 			</div>
 		</div>
 		<!--立即购买和加入购物车弹窗 E-->
-
+		
+		<!--联系客服 S-->
+		<div class='tc' style='display:none;'>
+			<div class='relation_me center_tc'>
+				<h2>联系客服</h2>
+				<ul>
+					<li>商家-鲜橙公司</li>
+					<li>商家联系电话：<br/><a href="tel:0147-88469258">0147-88469258</a></li>
+					<li>商家服务时间：<br/>在线时间：9:00-24：00<br/>电话时间：9:00-18：00</li>
+				</ul>
+				<p>温馨提示：<br/>商品如有售后问题请加客服QQ：4008693336受理，谢谢配合！</p>
+				<a @click='closetc' class='tc-close' href="javascript:;">×</a>
+			</div>	
+		</div>
+		<!--联系客服 E-->
+		
 	</div>
 </template>
 <style scoped>
+	.relation_me{width: 5.17rem; padding: 0.33rem 0.53rem; background: #fff; position: relative; font-size: 0.26rem; color: #434343; border-radius: 0.02rem; border:0.01rem solid #cccccc; line-height: 0.34rem;}
+	.relation_me a{color: #000;}
+	.relation_me h2{font-weight: normal; border-bottom:0.01rem solid #cccccc; padding-bottom: 0.23rem; }
+	.relation_me li:nth-child(1){margin: 0.26rem 0 0.43rem;}
+	.relation_me li:nth-child(2){margin-bottom: 0.25rem;}
+	.relation_me li:nth-child(3){margin-bottom: 0.7rem;}
+	.relation_me p{color: #fb4c45; font-size: 0.18rem;}
+	.relation_me .tc-close{top: 0.1rem; right: 0.4rem;}
+
+
 	.buy_intoCar{height: 8.86rem; width: 7.5rem; background: #fff; position: absolute; bottom: 0; left: 0; z-index: 9999;}
 	.goods_banner{height: 2.25rem; border-bottom: 0.01rem solid #dddddd; position: relative;}
 	.goods_banner dl{display: flex;}
