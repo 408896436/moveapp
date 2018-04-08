@@ -1,9 +1,13 @@
 <template>
   <div>
-    <div class='empty'>
+    
+    <!--购物车无内容 S-->
+    <div class='empty' v-if='myCar.length <= 0'>
     	<span class='empty_icon'></span>
     	<p>购物车空无一物，赶紧去选购商品吧！</p>
     </div>
+    <!--购物车无内容 E-->
+
   </div>
 </template>
 
@@ -11,7 +15,9 @@
 export default {
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      myCar : [{
+
+      }]
     }
   }
 }

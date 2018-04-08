@@ -54,6 +54,13 @@ let routerConfig = [
         meta: {
             title: '新增地址'
         }
+    },
+    {
+        path:'/addmanage', 
+        component:resolve => require(['./template/AddManage.vue'], resolve),
+        meta: {
+            title: '地址管理'
+        }
     }     	
 ];
 
